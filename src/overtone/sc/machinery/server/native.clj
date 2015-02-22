@@ -24,6 +24,7 @@
 
 (defonce __LOAD_SCSYNTH_NATIVE_LIB__
   (try
+    (throw (UnsatisfiedLinkError.))
     (when-not (windows-os?)
       (defclib
         libc

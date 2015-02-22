@@ -39,7 +39,7 @@
        (vec (set (concat (get JVMOPTS :any)
                          (get JVMOPTS os))))))
 
-(defproject overtone "0.10-SNAPSHOT"
+(defproject minecraft.overtone "0.10-SNAPSHOT"
   :description "Collaborative Programmable Music."
   :url "http://overtone.github.io/"
   :mailing-list {:name "overtone"
@@ -49,7 +49,7 @@
             :url "http://opensource.org/licenses/MIT"
             :distribution :repo
             :comments "Please use Overtone for good"}
-
+  :resource-paths ["resources/overtone-logo.png"]
   :dependencies [[org.clojure/clojure "1.5.1"]
                  [org.clojure/data.json "0.2.3"]
                  [clj-native "0.9.3"]
@@ -60,7 +60,8 @@
                  [overtone/libs.handlers "0.2.0"]
                  [overtone/scsynth "3.5.7.0"]
                  [overtone/scsynth-extras "3.5.7.0"]
-                 [clj-glob "1.0.0"]]
+                 [clj-glob "1.0.0"]
+                 [net.java.dev.jna/jna "4.1.0"]]
   :profiles {:test {:dependencies [[bultitude "0.2.0"]
                                    [polynome "0.2.2"]]}}
   :test-selectors {:core (fn [m] (not (some m [:gui :hw])))

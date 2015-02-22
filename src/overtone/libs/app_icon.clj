@@ -9,16 +9,8 @@
     (-> (java.awt.Toolkit/getDefaultToolkit)
         (.createImage icon-url))))
 
-(defn- set-icon [icon]
-  (branch (get-os)
-    :mac (try
-           (import 'com.apple.eawt.Application)
-           (-> (com.apple.eawt.Application/getApplication)
-               (.setDockIconImage icon))
-           (catch Exception e))))
-
-(defn- setup-icon []
-  (set-icon (load-icon "overtone-logo.png")))
+(defn- set-icon [icon])
+(defn- setup-icon [] )
 
 (defonce __INIT-ICON__
   (setup-icon))
